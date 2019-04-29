@@ -28,6 +28,22 @@ android {
         minSdkVersion getExtOrIntegerDefault('minSdkVersion')
         targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
     }
+
+    buildTypes {
+        debug {}
+        qa {}
+        fox {}
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        sourceSets {}
+        splits {}
+    }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 repositories {
